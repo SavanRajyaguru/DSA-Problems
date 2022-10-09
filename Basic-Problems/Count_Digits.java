@@ -1,6 +1,6 @@
 public class Count_Digits {
     
-    // time: O(n)
+    // time: O(n) n is number of digits
     protected static int countNo(int n){
         int res = 0;
         while(n > 0){
@@ -9,7 +9,6 @@ public class Count_Digits {
         }
         return res;
     }
-
     public static void main(String[] args) {
         int n = 7007;
         System.out.println(countNo(n));

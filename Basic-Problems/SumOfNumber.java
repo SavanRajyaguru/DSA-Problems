@@ -11,7 +11,6 @@ public class SumOfNumber{
             
         return n + sumOfNumber(n-1);
     } 
-
     public static void main(String[] args) {
         int n = 5;
         System.out.println(sumOfNumber(n));

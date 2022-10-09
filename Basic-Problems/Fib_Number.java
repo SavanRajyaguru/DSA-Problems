@@ -28,7 +28,6 @@ public class Fib_Number {
             b = c;
         }
     }
-
     public static void main(String[] args){
         int n = 9;
         System.out.println(fib(n));
