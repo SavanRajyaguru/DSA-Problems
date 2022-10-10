@@ -1,6 +1,8 @@
 class test{
 
     public static void main(String[] args) {
-        System.out.println("hasdf");
+        int n = -3586;
+
+        System.out.println(Math.abs(n));
     }
 }
