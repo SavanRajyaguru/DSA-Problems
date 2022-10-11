@@ -1,7 +1,7 @@
 // a=10, b=15  GCD=5
 // a=7, b=13 GCD=1
 // Logic: GCD is never going beyond the minimum of the a and b
-// Time: O(min(a,b))
+
 public class GCD_or_HCF {
 
     // Euclidean Algo
@@ -14,7 +14,8 @@ public class GCD_or_HCF {
             return gcd(b, a%b);
     }
 
-    // simple approch
+    // Simple approch
+    // Time: O(min(a,b))
     protected static int findGCD(int a, int b){
         // find the minimun of a and b
         int res = Math.min(a, b);

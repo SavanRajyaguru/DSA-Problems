@@ -15,6 +15,8 @@ public class LCM {
         return (a*b) / gcd(a,b);
     }
 
+    // Simple approch
+    // Time: O(max(a,b)) 
     protected static int findlcm(int a, int b){
         int res = Math.max(a, b);
         while(true){
