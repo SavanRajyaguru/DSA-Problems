@@ -14,7 +14,7 @@ public class GCD_or_HCF {
             return gcd(b, a%b);
     }
 
-    // Simple approch
+    // Simple approach
     // Time: O(min(a,b))
     protected static int findGCD(int a, int b){
         // find the minimun of a and b
