@@ -1,6 +1,13 @@
 import java.util.HashMap;
 
-public class test {
+/*
+    https://leetcode.com/problems/roman-to-integer/
+    
+    Input: s = "MCMXCIV"
+    Output: 1994
+    Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+ */
+public class Roman_to_Integer {
     public static void main(String[] args) {
         HashMap<Character,Integer> map = new HashMap<>();
         map.put('I',1);
@@ -23,6 +30,6 @@ public class test {
                 System.out.println(ans);
             }
         }
-        System.out.println(ans);
+        System.out.println("Final Ans: "+ans);
     }
 }
