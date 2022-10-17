@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 /*
 https://leetcode.com/problems/baseball-game/
@@ -27,6 +28,9 @@ The total sum is 5 + 10 + 15 = 30.
 
 public class Baseball_Game {
 
+    // Simple approch 
+    // Time: O(2n)
+    // Space: O(N)
     private static int calPoints(String[] arr) {
         ArrayList<Integer> points = new ArrayList<Integer>();
         int i = 0;
@@ -57,8 +61,35 @@ public class Baseball_Game {
         int sum = points.stream().mapToInt(k -> k).sum();
         return sum;
     }
+
+    // using stack 
+    // Time: O(N)
+    // Space: O(1)
+    private static int secondApproch(String[] arr){
+        Stack<Integer> stack = new Stack<>();
+
+        for(String op : arr){
+            if(op.equals("+")){
+                int top = stack.pop();
+                int newtop = top + stack.peek();
+                stack.push(top);
+                stack.push(newtop);
+            } else if(op.equals("C")){
+                stack.pop();
+            } else if(op.equals("D")){
+                stack.push(2 * stack.peek());
+            } else {
+                stack.push(Integer.valueOf(op));
+            }
+        }
+
+        int ans = 0;
+        for(int i : stack) ans += i;
+        return ans;
+    }
     public static void main(String[] args) {
         String[] arr = {"5","-2","4","C","D","9","+","+"};
         System.out.println(calPoints(arr));
+        System.out.println("Second Approch: "+secondApproch(arr));
     }
 }
