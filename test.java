@@ -1,27 +1,25 @@
-import java.util.HashMap;
 
-public class test {
+public class test{
     public static void main(String[] args) {
-        HashMap<Character,Integer> map = new HashMap<>();
-        map.put('I',1);
-        map.put('V',5);
-        map.put('X',10);
-        map.put('L',50);
-        map.put('C',100);
-        map.put('D',500);
-        map.put('M',1000);
+       int[][] arr = {  {1,1,1,1,1},
+                        {1,1,1,1,1},
+                        {1,1,1,1,1},
+                        {1,1,1,1,1},
+                        {1,1,1,1,1}};
+        int row = arr.length;
+        int ans = 0;
 
-        String s = "MCMXCIV";
-        int ans = map.get(s.charAt(s.length()-1));
-        for(int i = s.length()-2; i>=0; i--){
-            if(map.get(s.charAt(i)) >= map.get(s.charAt(i+1))){
-                ans += map.get(s.charAt(i));
-                System.out.println(ans);
+        for(int i=0; i<row; i++){
+            ans += arr[i][i];
+        }
+        int j = 0;
+        for(int i=row-1; i>=0; i--){ 
+            if(i == j){
+                j++;
+                continue;
             }
-            else{
-                ans -= map.get(s.charAt(i));
-                System.out.println(ans);
-            }
+            ans += arr[j][i];
+            j++;
         }
         System.out.println(ans);
     }
