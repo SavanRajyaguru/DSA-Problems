@@ -1,26 +1,21 @@
-
-public class test{
-    public static void main(String[] args) {
-       int[][] arr = {  {1,1,1,1,1},
-                        {1,1,1,1,1},
-                        {1,1,1,1,1},
-                        {1,1,1,1,1},
-                        {1,1,1,1,1}};
-        int row = arr.length;
+import java.util.ArrayList;
+import java.util.Arrays;
+class test{
+    private static void union(int[] arr1, int[] arr2, int n, int m){
         int ans = 0;
-
-        for(int i=0; i<row; i++){
-            ans += arr[i][i];
-        }
-        int j = 0;
-        for(int i=row-1; i>=0; i--){ 
-            if(i == j){
-                j++;
-                continue;
-            }
-            ans += arr[j][i];
-            j++;
-        }
-        System.out.println(ans);
+        int total = m *(m+1)/2;
+        for(int i: arr2)
+            ans += i;
+        System.out.println(total-ans);
     }
+
+    public static void main(String[] args) {
+         
+        int arr1[] = {1,35};  
+        int arr2[] = {0,1,3};
+        int n = arr1.length, m = arr2.length;
+        
+        union(arr1, arr2, n, m);
+    }
+
 }
